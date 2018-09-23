@@ -1,10 +1,13 @@
 // @flow
 import React from 'react';
-import Frame from '../../components/Frame/index.js';
+import Frame from '../../components/Frame/index';
+import ClassForm from './components/ClassForm/index';
 
 const Home = () => (
   <Frame>
-    Home
+  <ClassForm
+    siteName="Argonne Elementary"
+    availableHours={[]} />
   </Frame>
 );
 

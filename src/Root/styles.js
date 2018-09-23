@@ -7,8 +7,9 @@ import reset from 'styled-reset';
 export const colors = {
   white: '#fff',
   whiteSmoke: '#f0f0f0',
-  athensGrey: '#e0E1E2',
+  athensGrey: '#e0e1e2',
   solitude: '#fafbfc',
+  casper: '#bdbebf',
 };
 
 const sizes = {
