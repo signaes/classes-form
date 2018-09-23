@@ -17,16 +17,26 @@ const sizes = {
   phone: 576,
 };
 
-export const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args: []) => css`
-    @media (max-width: ${sizes[label] / 12}rem) {
+type MediaQuery = (...args: any) => string;
+
+type Sizes = {
+  [key: string]: MediaQuery,
+};
+
+export const media = Object.keys(sizes)
+.reduce((acc: Object, label: string): Sizes => {
+  (acc: Object)[label] = (...args) => css`
+    @media (min-width: ${sizes[label] / 12}rem) {
       ${css(...args)}
     }
   `
 
   return acc;
-}, {});
-
+}, {
+  desktop: (args: any) => '',
+  tablet: (args: any) => '',
+  phone: (args: any) => '',
+});
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
