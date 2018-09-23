@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "main": "index.js",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.7.1",
+    "formik": "^1.3.0",
     "fusion-cli": "^1.9.0",
     "fusion-core": "^1.5.0",
     "fusion-plugin-react-helmet-async": "^1.0.0",
@@ -13,8 +15,12 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^3.4.9",
-    "styletron-react": "^4.3.5"
+    "styletron-react": "^4.3.5",
+    "yup": "^0.26.6"
   },
   "scripts": {
     "dev": "fusion dev",
@@ -27,12 +33,16 @@
     "start": "fusion start"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "cypress": "^3.1.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint": "^5.6.0",
+    "eslint-plugin-flowtype": "^2.50.1",
     "eslint-plugin-react": "^7.11.1",
-    "flow-bin": "^0.81.0",
-    "jest": "^23.6.0"
+    "flow-bin": "^0.81.0"
   }
 }
