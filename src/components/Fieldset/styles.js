@@ -27,7 +27,8 @@ const StyledFieldset = styled.fieldset`
     font-size: 1rem;
   }
 
-  input {
+  input,
+  textarea {
     min-height: 2rem;
     padding: 0 .8rem;
     border-radius: .3rem;
