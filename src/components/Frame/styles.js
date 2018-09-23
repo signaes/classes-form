@@ -6,10 +6,14 @@ const StyledFrame = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 
-  .bound {
-    max-width: 1040px;
-    width: 100%;
+  .frame {
+    &__bound {
+      max-width: 1040px;
+      width: 100%;
+      flex-grow: 1;
+    }
   }
 `;
 
