@@ -10,6 +10,8 @@ export const colors = {
   athensGrey: '#e0e1e2',
   solitude: '#fafbfc',
   casper: '#bdbebf',
+  chambray: '#4b6074',
+  raven: '#757677',
 };
 
 const sizes = {
@@ -48,10 +50,21 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-weight: normal;
+  }
+
   body {
     background-color: ${colors.solitude};
     font-family: 'Varela Round', sans-serif;
     font-size: 12px;
+    color: ${colors.raven};
   }
 `;
 
