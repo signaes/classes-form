@@ -60,6 +60,8 @@ const Home = () => (
     <Center>
       <FusionStyle>Fusion.js</FusionStyle>
 
+      OK
+
       <Center>
         <Circle>
           <GettingStartedLink href="https://fusionjs.com/docs/getting-started">
