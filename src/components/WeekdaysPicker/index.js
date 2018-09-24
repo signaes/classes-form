@@ -27,6 +27,8 @@ type Choice = {
   value: string,
 };
 
+const isDayAvailable = (days, day) => days.map(d => d.id).indexOf(day) > -1;
+
 class WeekdaysPicker extends React.PureComponent<Props, State> {
   state: State = {
     choicesDic: {},
@@ -91,6 +93,7 @@ class WeekdaysPicker extends React.PureComponent<Props, State> {
                     name={range.join('-')}
                     onChange={this.handleChange}
                     data-index={index}
+                    isDisabled={isDayAvailable(days, weekday)}
                     key={`${index}-${weekday}`}
                   />
                 )) }

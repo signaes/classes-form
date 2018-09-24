@@ -130,17 +130,17 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                     {
                       range: ['03:15', '04:15'],
                       days: [
-                        { label: 'Mon', value: 'Mon-03:15-04:15' },
-                        { label: 'Wed', value: 'Wed-03:15-04:15' },
-                        { label: 'Fri', value: 'Fri-03:15-04:15' },
+                        { label: 'Mon', value: 'Mon-03:15-04:15', id: 'Mon' },
+                        { label: 'Wed', value: 'Wed-03:15-04:15', id: 'Wed' },
+                        { label: 'Fri', value: 'Fri-03:15-04:15', id: 'Fri' },
                       ]
                     },
                     {
                       range: ['04:45', '05:45'],
                       days: [
-                        { label: 'Mon', value: 'Mon-04:45-05:45' },
-                        { label: 'Wed', value: 'Wed-04:45-05:45' },
-                        { label: 'Fri', value: 'Fri-04:45-05:45' },
+                        { label: 'Mon', value: 'Mon-04:45-05:45', id: 'Mon' },
+                        { label: 'Tue', value: 'Tue-04:45-05:45', id: 'Tue' },
+                        { label: 'Thu', value: 'Thu-04:45-05:45', id: 'Thu' },
                       ]
                     }
                   ]}

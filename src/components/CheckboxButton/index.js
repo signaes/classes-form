@@ -14,6 +14,7 @@ const CheckboxButton = (props: Object) => (
       id={props.value}
       name={props.name}
       onChange={props.onChange}
+      disabled={props.isDisabled}
       value={props.value} />
     <span className={`checkbox-button__ui ${props.className}__ui`}>
       { props.label }

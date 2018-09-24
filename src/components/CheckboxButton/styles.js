@@ -38,6 +38,11 @@ const StyledCheckboxButton = styled.label`
       background-color: ${colors.shadowGreen};
       border-color: ${colors.shadowGreen};
     }
+
+    &__input:disabled + .checkbox-button__ui {
+      pointer-events: none;
+      opacity: .5;
+    }
   }
 `;
 
