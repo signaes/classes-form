@@ -20,6 +20,7 @@ type State = {
   choicesDic: Object,
   choicesArray: [],
   choicesString: string,
+  isOpened: any,
 };
 
 type Choice = {
@@ -33,7 +34,12 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
     choicesDic: {},
     choicesArray: [],
     choicesString: '',
+    isOpened: null,
   }
+
+  toggle = () => this.setState((previousState: Object) => ({
+    isOpened: !previousState.isOpened,
+  }));
 
   handleChange = (e: Object) => {
     const { target } = e;
@@ -77,19 +83,23 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
     console.log(this.state);
 
     return (
-      <StyledCheckboxesSelect className="checkboxes-select">
+      <StyledCheckboxesSelect
+        className="checkboxes-select"
+        data-opened={this.state.isOpened}>
         <label
           className="checkboxes-select__label"
           htmlFor={name}>
         { label }
         </label>
         <div className="checkboxes-select__field">
-          <div className="checkboxes-select__value">
+          <div className="checkboxes-select__value" onClick={this.toggle}>
             { this.state.choicesString
               ? this.state.choicesString
               : placeholder }
           </div>
-          <div className="checkboxes-select__options">
+          <div
+            className="checkboxes-select__options"
+            data-opened={this.state.isOpened}>
             { options.map(({ value, label }, index) => (
               <Checkbox
                 value={value}
