@@ -73,6 +73,7 @@ const StyledCheckboxesSelect = styled.fieldset`
       cursor: pointer;
       position: relative;
       z-index: 1;
+      justify-content: space-between;
     }
 
     &__options {

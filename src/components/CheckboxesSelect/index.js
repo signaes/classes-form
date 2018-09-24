@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import ErrorDisplay from '../ErrorDisplay/index';
 import Checkbox from '../Checkbox/index';
+import { ChevronDown } from '../Icons/index';
 import StyledCheckboxesSelect from './styles';
 
 type Props = {
@@ -93,9 +94,14 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
         </label>
         <div className="checkboxes-select__field">
           <div className="checkboxes-select__value" onClick={this.toggle}>
-            { this.state.choicesString
-              ? this.state.choicesString
-              : placeholder }
+            <span>
+              { this.state.choicesString
+                ? this.state.choicesString
+                : placeholder }
+            </span>
+            <span>
+              <ChevronDown />
+            </span>
           </div>
           <div
             className="checkboxes-select__options"
