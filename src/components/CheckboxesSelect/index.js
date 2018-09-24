@@ -38,12 +38,14 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
   handleChange = (e: Object) => {
     const { target } = e;
     const { checked, value } = target;
+    const { index, label } = target.dataset;
 
     let choicesDic = {...this.state.choicesDic};
     choicesDic[value] = {
       checked,
-      index: parseInt(target.dataset.index, 10),
+      index: parseInt(index, 10),
       value,
+      label,
     };
 
     let choicesArray = [];
@@ -56,7 +58,7 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
 
     choicesArray.sort((a: Choice, b: Choice) => a.index - b.index);
 
-    const choicesString = choicesArray.map(c => c.value).join('-');
+    const choicesString = choicesArray.map(c => c.label).join('-');
 
     this.setState({ choicesDic, choicesArray, choicesString });
   }

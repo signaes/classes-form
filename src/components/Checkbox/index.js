@@ -9,13 +9,14 @@ const Checkbox = (props: Object) => (
     className={`checkbox ${props.className}`}>
     <input
       {...props}
+      data-label={props.label}
       className={`checkbox__input ${props.className}__input`}
       type="checkbox"
       id={props.value}
       name={props.name}
       onChange={props.onChange}
       value={props.value} />
-    <span className={`chekbox__check ${props.className}__check`}>
+    <span className={`checkbox__check ${props.className}__check`}>
       <Check
         className={`checkbox__check__icon ${props.className}__check__icon`} />
     </span>

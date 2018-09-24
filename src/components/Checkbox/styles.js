@@ -21,7 +21,9 @@ const StyledCheckbox = styled.label`
       width: .65rem;
       margin-right: .6rem;
       border: 2px solid ${colors.shadowGreen};
-      border-radius: 5px;
+      border-radius: 3px;
+      align-items: center;
+      justify-content: center;
 
       &__icon {
         opacity: 0;
@@ -35,10 +37,8 @@ const StyledCheckbox = styled.label`
 
     }
 
-    &__input:checked + .checkbox__check {
-      &__icon {
-        opacity; 1;
-      }
+    &__input:checked + .checkbox__check > .checkbox__check__icon {
+      opacity: 1;
     }
   }
 `;
