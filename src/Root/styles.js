@@ -14,6 +14,7 @@ export const colors = {
   raven: '#757677',
   bubbles: '#f5faf8',
   shadowGreen: '#92c5b8',
+  iceberg: '#c5e0d9',
 };
 
 const sizes = {

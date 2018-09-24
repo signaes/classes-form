@@ -6,6 +6,7 @@ import validationSchema from './validationSchema';
 import initialValues from './initialValues';
 import Fieldset from '../../../../components/Fieldset/index';
 import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
+import WeekdaysPicker from '../../../../components/WeekdaysPicker/index';
 import StyledClassForm from './styles';
 
 type Props = {
@@ -120,6 +121,30 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                 />
               </div>
               <div className="row">
+                <WeekdaysPicker
+                  name="availableHours"
+                  label="Available Hours"
+                  errors={errors}
+                  touched={touched}
+                  availableDaysByHours={[
+                    {
+                      range: ['03:15', '04:15'],
+                      days: [
+                        { label: 'Mon', value: 'Mon-03:15-04:15' },
+                        { label: 'Wed', value: 'Wed-03:15-04:15' },
+                        { label: 'Fri', value: 'Fri-03:15-04:15' },
+                      ]
+                    },
+                    {
+                      range: ['04:45', '05:45'],
+                      days: [
+                        { label: 'Mon', value: 'Mon-04:45-05:45' },
+                        { label: 'Wed', value: 'Wed-04:45-05:45' },
+                        { label: 'Fri', value: 'Fri-04:45-05:45' },
+                      ]
+                    }
+                  ]}
+                />
               </div>
             </Form>
           )}
