@@ -5,6 +5,7 @@ import { Formik, Form, Field } from 'formik';
 import validationSchema from './validationSchema';
 import initialValues from './initialValues';
 import Fieldset from '../../../../components/Fieldset/index';
+import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
 import StyledClassForm from './styles';
 
 type Props = {
@@ -81,12 +82,18 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                   touched={touched}
                   placeholder="$000"
                 />
-                <Fieldset
+                <CheckboxesSelect
                   name="grade"
                   label="Grade"
+                  placeholder="Select grade"
                   errors={errors}
                   touched={touched}
-                  placeholder="Select Grade"
+                  options={[
+                    { label: 'K', value: 'k' },
+                    { label: '1', value: '1' },
+                    { label: '2', value: '2' },
+                    { label: '3', value: '3' },
+                  ]}
                 />
               </div>
               <div className="row">

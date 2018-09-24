@@ -2,7 +2,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
-import ErrorDisplay from './components/ErrorDisplay/index';
+import ErrorDisplay from '../ErrorDisplay/index';
 import StyledFieldset from './styles';
 
 type Props = {
