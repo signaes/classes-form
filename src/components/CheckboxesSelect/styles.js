@@ -38,12 +38,18 @@ const StyledCheckboxesSelect = styled.fieldset`
   position: relative;
 
   &[data-opened="true"] {
-    .checkboxes-select__value {
-      border-radius: .3rem .3rem 0 0;
-    }
+    .checkboxes-select {
+      &__value {
+        border-radius: .3rem .3rem 0 0;
+      }
 
-    .checkboxes-select__options {
-      border-radius: 0 0 .3rem .3rem;
+      &__options {
+        border-radius: 0 0 .3rem .3rem;
+      }
+
+      &__chevron {
+        transform: rotate(180deg);
+      }
     }
   }
 
@@ -74,6 +80,10 @@ const StyledCheckboxesSelect = styled.fieldset`
       position: relative;
       z-index: 1;
       justify-content: space-between;
+    }
+
+    &__chevron {
+      transition: transform ease .3s;
     }
 
     &__options {

@@ -99,7 +99,7 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
                 ? this.state.choicesString
                 : placeholder }
             </span>
-            <span>
+            <span className="checkboxes-select__chevron">
               <ChevronDown />
             </span>
           </div>
