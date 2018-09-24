@@ -75,7 +75,11 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
 
     return (
       <StyledCheckboxesSelect className="checkboxes-select">
-        <label htmlFor={name}>{ label }</label>
+        <label
+          className="checkboxes-select__label"
+          htmlFor={name}>
+        { label }
+        </label>
         <div className="checkboxes-select__field">
           <div className="checkboxes-select__value">
             { this.state.choicesString
@@ -84,7 +88,10 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
           </div>
           <div className="checkboxes-select__options">
             { options.map(({ value, label }, index) => (
-              <div className="checkboxes-select__option" key={`${index}-${value}`}>
+              <label
+                htmlFor={value}
+                className="checkboxes-select__option"
+                key={`${index}-${value}`}>
                 <input
                   type="checkbox"
                   id={value}
@@ -92,8 +99,8 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
                   onChange={this.handleChange}
                   data-index={index}
                   value={value} />
-                <label htmlFor={value}>{ label }</label>
-              </div>
+                <span className="checkboxes-select__option__label">{ label }</span>
+              </label>
             )) }
           </div>
         </div>

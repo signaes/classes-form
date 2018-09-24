@@ -11,6 +11,14 @@ const StyledClassForm = styled.div`
     fieldset {
       display: flex;
       flex-grow: 1;
+      flex-shrink: 0;
+      min-width: calc(33% - 2.6rem);
+
+      ${media.phone`
+        & + fieldset {
+          margin-left: 1.3rem;
+        }
+      `}
     }
   }
 

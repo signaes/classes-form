@@ -11,18 +11,9 @@ const StyledFieldset = styled.fieldset`
 
   ${media.phone`
     width: ${props => (props.fullWidth ? '100%' : 'auto')};
-
-    ${({ fullWidth }) => fullWidth
-      ? null
-      : css`
-        & + & {
-          margin-left: 1.3rem;
-        }
-      `
-    }
   `}
 
-  label {
+  .fieldset__label {
     margin-bottom: .8rem;
     color: ${colors.casper};
     font-size: .8rem;

@@ -12,6 +12,7 @@ export const colors = {
   casper: '#bdbebf',
   chambray: '#4b6074',
   raven: '#757677',
+  bubbles: '#f5faf8',
 };
 
 const sizes = {

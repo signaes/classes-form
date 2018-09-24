@@ -27,7 +27,7 @@ const Fieldset = ({
   touched,
 }: Props) => (
   <StyledFieldset>
-    <label htmlFor={name}>{ label }</label>
+  <label className="fieldset__label" htmlFor={name}>{ label }</label>
     { children
       ? (
           <Field
