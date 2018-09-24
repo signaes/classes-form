@@ -1,7 +1,6 @@
 //@flow
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'formik';
 import ErrorDisplay from '../ErrorDisplay/index';
 import Checkbox from '../Checkbox/index';
 import { ChevronDown } from '../Icons/index';
