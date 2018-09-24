@@ -3,6 +3,7 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import ErrorDisplay from '../ErrorDisplay/index';
+import Checkbox from '../Checkbox/index';
 import StyledCheckboxesSelect from './styles';
 
 type Props = {
@@ -88,19 +89,15 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
           </div>
           <div className="checkboxes-select__options">
             { options.map(({ value, label }, index) => (
-              <label
-                htmlFor={value}
+              <Checkbox
+                value={value}
+                label={label}
                 className="checkboxes-select__option"
-                key={`${index}-${value}`}>
-                <input
-                  type="checkbox"
-                  id={value}
-                  name={name}
-                  onChange={this.handleChange}
-                  data-index={index}
-                  value={value} />
-                <span className="checkboxes-select__option__label">{ label }</span>
-              </label>
+                name={name}
+                onChange={this.handleChange}
+                data-index={index}
+                key={`${index}-${value}`}
+              />
             )) }
           </div>
         </div>

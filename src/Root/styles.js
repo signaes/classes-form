@@ -13,6 +13,7 @@ export const colors = {
   chambray: '#4b6074',
   raven: '#757677',
   bubbles: '#f5faf8',
+  shadowGreen: '#92c5b8',
 };
 
 const sizes = {
