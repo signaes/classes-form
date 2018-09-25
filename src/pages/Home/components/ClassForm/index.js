@@ -8,6 +8,7 @@ import Fieldset from '../../../../components/Fieldset/index';
 import RadiosFieldset from '../../../../components/RadiosFieldset/index';
 import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
 import WeekdaysPicker from '../../../../components/WeekdaysPicker/index';
+import Button from '../../../../components/Button/index';
 import StyledClassForm from './styles';
 
 type Props = {
@@ -159,6 +160,12 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                   ]}
                 />
               </div>
+              <div className="row align-right">
+                <Button onClick={console.log}>Submit</Button>
+              </div>
+              <p className="row align-right">
+                <small>Complete this form for each Class you wish to teach.</small>
+              </p>
             </Form>
           )}
         </Formik>

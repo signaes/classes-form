@@ -8,6 +8,10 @@ const StyledClassForm = styled.div`
     display: flex;
     flex-direction: column;
 
+    &.align-right {
+      justify-content: flex-end;
+    }
+
     fieldset {
       display: flex;
       flex-grow: 1;
