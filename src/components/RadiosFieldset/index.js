@@ -39,7 +39,7 @@ const Fieldset = ({
             type="radio"
             id={value}
             value={value}
-            checked={checked}
+            defaultChecked={checked}
             name={name} />
           <span className="radios-fieldset__option__label">
             { label }
@@ -59,7 +59,7 @@ Fieldset.propTypes = {
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
-    checked: PropTypes.bool.isRequired,
+    checked: PropTypes.bool,
     value: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
   })).isRequired,

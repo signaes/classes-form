@@ -7,7 +7,6 @@ const CheckboxButton = (props: Object) => (
     htmlFor={props.value}
     className={`checkbox-button ${props.className}`}>
     <input
-      {...props}
       data-label={props.label}
       className={`checkbox-button__input ${props.className}__input`}
       type="checkbox"
