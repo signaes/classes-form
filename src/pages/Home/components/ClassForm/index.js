@@ -5,6 +5,7 @@ import { Formik, Form, Field } from 'formik';
 import validationSchema from './validationSchema';
 import initialValues from './initialValues';
 import Fieldset from '../../../../components/Fieldset/index';
+import RadiosFieldset from '../../../../components/RadiosFieldset/index';
 import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
 import WeekdaysPicker from '../../../../components/WeekdaysPicker/index';
 import StyledClassForm from './styles';
@@ -143,6 +144,18 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                         { label: 'Thu', value: 'Thu-04:45-05:45', id: 'Thu' },
                       ]
                     }
+                  ]}
+                />
+              </div>
+              <div className="row">
+                <RadiosFieldset
+                  label="Frequency you want to offer your class"
+                  name="frequency"
+                  errors={errors}
+                  touched={touched}
+                  options={[
+                    { value: 'once', label: 'Once a week', checked: true },
+                    { value: 'twice', label: 'Twice a week' },
                   ]}
                 />
               </div>
