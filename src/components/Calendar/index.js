@@ -3,12 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cal from 'solar-months';
 import { WEEKDAYS } from '../../constants/weekdays';
+import { MONTH_NAMES } from '../../constants/months';
 import split from '../../utils/split';
 import StyledCalendar from './styles';
+import daysByWeek from './daysByWeek';
 
 const YEAR = new Date().getFullYear();
 const MONTH = new Date().getMonth();
-const currentYearCal = cal(YEAR);
 const weekInitials = WEEKDAYS.map(w => w[0]);
 
 type Props = {
@@ -16,38 +17,17 @@ type Props = {
   month: number,
 };
 
-const daysByWeek = (days: []) => {
-  let weeksList = [[]]
-
-  days.forEach(day => {
-    if (day.weekday === 0) {
-      weeksList.push([]);
-    }
-
-    weeksList[weeksList.length - 1][day.weekday] = day;
-  });
-
-  weeksList = weeksList.map(week => {
-    const emptyDaySlot = { date: new Date(), day: '', weekday: '', empty: true };
-    let completeWeek = [];
-
-    for (let i = 0; i < 7; i++) {
-      completeWeek[i] = week[i] ? week[i] : emptyDaySlot;
-    }
-
-    return completeWeek;
-  })
-
-  return weeksList;
-}
-
 const Calendar = ({ year = YEAR, month = MONTH }: Props) => (
   <StyledCalendar className="calendar">
-    <div>Calendar</div>
     { cal(year)
-        .slice(month - 1, month < 11 ? month + 1 : month)
+        .slice(month - 1, month)
         .map((days, index) => (
           <div className="calendar__month" key={`cal-month-${index}-year`}>
+            <header className="calendar__header">
+              <h1 className="calendar__month-name">
+                { MONTH_NAMES[month] } { year }
+              </h1>
+            </header>
             { weekInitials.map((d, wi) => (
               <span className="calendar__weekday" key={`${d}-wd-${index}${wi}`}>
                 { d }
