@@ -4,6 +4,8 @@ import styled, { css, keyframes } from 'styled-components';
 import { colors, media } from '../../Root/styles';
 
 const StyledWeekdaysPicker = styled.fieldset`
+  flex-direction: column;
+
   .weekdays-picker {
     &__rows {
       display: flex;
