@@ -8,6 +8,7 @@ import Fieldset from '../../../../components/Fieldset/index';
 import RadiosFieldset from '../../../../components/RadiosFieldset/index';
 import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
 import WeekdaysPicker from '../../../../components/WeekdaysPicker/index';
+import Calendar from '../../../../components/Calendar/index';
 import Button from '../../../../components/Button/index';
 import StyledClassForm from './styles';
 
@@ -174,6 +175,8 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
         <header>
           <h1 className="frame__title">Season Information</h1>
         </header>
+        <div></div>
+        <Calendar />
       </aside>
     </main>
   </StyledClassForm>

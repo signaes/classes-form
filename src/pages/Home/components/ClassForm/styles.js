@@ -36,10 +36,14 @@ const StyledClassForm = styled.div`
       min-height: 100vh;
       padding-top: 2rem;
       padding-bottom: 2rem;
+      box-sizing: border-box;
+      max-width: 47rem;
 
       ${media.phone`
         &:first-child {
           padding-right: 3.3rem;
+          flex-grow: 1;
+          flex-shrink: 0;
         }
 
         &:last-child {

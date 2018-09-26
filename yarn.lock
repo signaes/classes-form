@@ -7402,6 +7402,10 @@ sockjs-client@1.1.4:
     json3 "^3.3.2"
     url-parse "^1.1.8"
 
+solar-months@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/solar-months/-/solar-months-0.0.1.tgz#d92dca6dbc42879f5865501d805ff033b1a3543d"
+
 source-list-map@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
