@@ -5,6 +5,7 @@ import { Formik, Form, Field } from 'formik';
 import validationSchema from './validationSchema';
 import initialValues from './initialValues';
 import Fieldset from '../../../../components/Fieldset/index';
+import PhoneNumberFieldset from '../../../../components/PhoneNumberFieldset/index';
 import RadiosFieldset from '../../../../components/RadiosFieldset/index';
 import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
 import WeekdaysPicker from '../../../../components/WeekdaysPicker/index';
@@ -45,12 +46,12 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                   touched={touched}
                   placeholder="Type the Company Name"
                 />
-                <Fieldset
+                <PhoneNumberFieldset
                   name="phoneNumber"
                   label="Phone Number"
                   errors={errors}
                   touched={touched}
-                  placeholder="000 0000 0000"
+                  placeholder="(000) 000-0000"
                 />
                 <Fieldset
                   name="courseName"
@@ -75,6 +76,7 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                 <Fieldset
                   name="classCost"
                   label="Class Cost"
+                  type="number"
                   errors={errors}
                   touched={touched}
                   placeholder="$000"
