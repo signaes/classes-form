@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import cal from 'solar-months';
 import { WEEKDAYS } from '../../constants/weekdays';
 import { MONTH_NAMES } from '../../constants/months';
-import split from '../../utils/split';
 import StyledCalendar from './styles';
 import daysByWeek from './daysByWeek';
 
