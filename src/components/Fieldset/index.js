@@ -2,8 +2,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
-import ErrorDisplay from '../ErrorDisplay/index';
-import StyledFieldset from './styles';
+import FieldsetPrototype from '../FieldsetPrototype/index';
 
 type Props = {
   name: string,
@@ -26,8 +25,7 @@ const Fieldset = ({
   children,
   touched,
 }: Props) => (
-  <StyledFieldset>
-  <label className="fieldset__label" htmlFor={name}>{ label }</label>
+  <FieldsetPrototype name={name} label={label} errors={errors} touched={touched}>
     { children
       ? (
           <Field
@@ -44,8 +42,7 @@ const Fieldset = ({
             placeholder={placeholder}
           />
       ) }
-    <ErrorDisplay errors={errors} touched={touched} fieldName={name} />
-  </StyledFieldset>
+  </FieldsetPrototype>
 );
 
 Fieldset.propTypes = {
