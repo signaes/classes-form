@@ -10,7 +10,10 @@ const messages = {
   },
   tooLong(fieldName: string, min: number): string {
     return `${fieldName} should no more than ${min} characters`;
-  }
+  },
+  minWeeks(): string {
+    return 'There should be a minimun of 1 week enrollment';
+  },
 };
 
 const fieldNames = {
@@ -18,6 +21,8 @@ const fieldNames = {
   phoneNumber: 'Phone number',
   courseName: 'Course name',
   courseDescription: 'Course description',
+  classCost: 'Class cost',
+  materialsFee: 'Materials fee',
 };
 
 const patterns = {
@@ -36,6 +41,10 @@ const patterns = {
   courseDescription: {
     regex: /^(?!\s)([\W\w\s](?!\s{2,})(?!\s{1,}$)){10,100}(?!\s)$/,
     explanation: 'The course description should have between 10 and 100 characters, no duplicate spaces or spaces around',
+  },
+  cost: {
+    regex: /^\d{1,}\.\d{2}$/,
+    explanation: 'The value should have an integral part and only two decimal numbers',
   },
 };
 
@@ -74,6 +83,24 @@ const validationSchema = Yup.object().shape({
       patterns.courseDescription.explanation,
       value => patterns.courseDescription.regex.test(value)
     ),
+  classCost: Yup.string()
+    .required(messages.required(fieldNames.classCost))
+    .test(
+      fieldNames.classCost,
+      patterns.cost.explanation,
+      value => patterns.cost.regex.test(value)
+    ),
+  materialsFee: Yup.string()
+    .required(messages.required(fieldNames.materialsFee))
+    .test(
+      fieldNames.materialsFee,
+      patterns.cost.explanation,
+      value => patterns.cost.regex.test(value)
+    ),
+  minEnrollment: Yup.number()
+    .moreThan(0, messages.minWeeks()),
+  maxEnrollment: Yup.number()
+    .moreThan(0, messages.minWeeks()),
 });
 
 export default validationSchema;

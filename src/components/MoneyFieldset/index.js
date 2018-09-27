@@ -2,13 +2,13 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'formik';
+import MaskedInput from 'react-text-mask';
 import FieldsetPrototype from '../FieldsetPrototype/index';
 
 type Props = {
   name: string,
   label: string,
   className?: string,
-  type?: string,
   placeholder?: string,
   errors: Object,
   touched: Object,
@@ -16,40 +16,26 @@ type Props = {
   children?: React.Node,
 };
 
-const Fieldset = ({
+const MoneyFieldset = ({
   name,
   label,
   className = '',
   placeholder = '',
   errors,
   component = 'input',
-  type = 'text',
   children,
   touched,
 }: Props) => (
   <FieldsetPrototype name={name} label={label} errors={errors} touched={touched}>
-    { children
-      ? (
-          <Field
-            type={type}
-            name={name}
-            component={component}
-            placeholder={placeholder}>
-            { children }
-          </Field>
-        )
-      : (
-          <Field
-            type={type}
-            name={name}
-            component={component}
-            placeholder={placeholder}
-          />
-      ) }
+    <Field
+      name={name}
+      placeholder={placeholder}
+      type="string"
+    />
   </FieldsetPrototype>
 );
 
-Fieldset.propTypes = {
+MoneyFieldset.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
@@ -63,4 +49,4 @@ Fieldset.propTypes = {
   ]),
 };
 
-export default Fieldset;
+export default MoneyFieldset;

@@ -6,6 +6,7 @@ import validationSchema from './validationSchema';
 import initialValues from './initialValues';
 import Fieldset from '../../../../components/Fieldset/index';
 import PhoneNumberFieldset from '../../../../components/PhoneNumberFieldset/index';
+import MoneyFieldset from '../../../../components/MoneyFieldset/index';
 import RadiosFieldset from '../../../../components/RadiosFieldset/index';
 import CheckboxesSelect from '../../../../components/CheckboxesSelect/index';
 import WeekdaysPicker from '../../../../components/WeekdaysPicker/index';
@@ -73,20 +74,20 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                 />
               </div>
               <div className="row">
-                <Fieldset
+                <MoneyFieldset
                   name="classCost"
-                  label="Class Cost"
+                  label="Class Cost ($)"
                   type="number"
                   errors={errors}
                   touched={touched}
-                  placeholder="$000"
+                  placeholder="0.00"
                 />
-                <Fieldset
+                <MoneyFieldset
                   name="materialsFee"
-                  label="Materials Fee"
+                  label="Materials Fee ($)"
                   errors={errors}
                   touched={touched}
-                  placeholder="$000"
+                  placeholder="0.00"
                 />
                 <CheckboxesSelect
                   name="grade"
@@ -105,17 +106,19 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
               <div className="row">
                 <Fieldset
                   name="minEnrollment"
-                  label="Min Enrollment"
+                  label="Min Enrollment (in weeks)"
                   errors={errors}
                   touched={touched}
-                  placeholder="2 weeks"
+                  type="number"
+                  placeholder="1"
                 />
                 <Fieldset
                   name="maxEnrollment"
-                  label="Max Enrollment"
+                  label="Max Enrollment (in weeks)"
                   errors={errors}
                   touched={touched}
-                  placeholder="6 weeks"
+                  type="number"
+                  placeholder="1"
                 />
                 <Fieldset
                   name="registrationURL"

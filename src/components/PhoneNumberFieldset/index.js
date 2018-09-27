@@ -29,14 +29,13 @@ const PhoneNumberFieldset = ({
   <FieldsetPrototype name={name} label={label} errors={errors} touched={touched}>
     <Field
       name={name}
-      component={component}
       placeholder={placeholder}
       render={({ field }) => (
         <MaskedInput
           {...field}
           mask={['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
           placeholder={placeholder}
-          guide={false}
+          guide={true}
           id={name}
         />
       )}
