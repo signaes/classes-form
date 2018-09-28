@@ -23,6 +23,7 @@ const fieldNames = {
   courseDescription: 'Course description',
   classCost: 'Class cost',
   materialsFee: 'Materials fee',
+  registrationURL: 'Registration url',
 };
 
 const patterns = {
@@ -46,6 +47,10 @@ const patterns = {
     regex: /^\d{1,}\.\d{2}$/,
     explanation: 'The value should have an integral part and only two decimal numbers',
   },
+  url: {
+    regex: /^(https?):\/\/(-\.)?([^\s/?\.#-]+\.?)+(\/[^\s]*)?$/,
+    explanation: 'Please provide a valid URL',
+  }
 };
 
 const validationSchema = Yup.object().shape({
@@ -101,6 +106,13 @@ const validationSchema = Yup.object().shape({
     .moreThan(0, messages.minWeeks()),
   maxEnrollment: Yup.number()
     .moreThan(0, messages.minWeeks()),
+  registrationURL: Yup.string()
+    .required(messages.required(fieldNames.registrationURL))
+    .test(
+      fieldNames.registrationURL,
+      patterns.url.explanation,
+      value => patterns.url.regex.test(value)
+    ),
 });
 
 export default validationSchema;
