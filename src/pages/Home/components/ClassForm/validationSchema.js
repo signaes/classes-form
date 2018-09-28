@@ -24,6 +24,7 @@ const fieldNames = {
   classCost: 'Class cost',
   materialsFee: 'Materials fee',
   registrationURL: 'Registration url',
+  grade: 'Grade',
 };
 
 const patterns = {
@@ -113,6 +114,8 @@ const validationSchema = Yup.object().shape({
       patterns.url.explanation,
       value => patterns.url.regex.test(value)
     ),
+  grade: Yup.array()
+    .min(1, 'Must choose a grade')
 });
 
 export default validationSchema;

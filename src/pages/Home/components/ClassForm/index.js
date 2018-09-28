@@ -37,7 +37,7 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
           validationSchema={validationSchema}
           onSubmit={onSubmit}
         >
-          {({ errors, touched }) => (
+          {({ errors, touched, setFieldValue, setFieldTouched }) => (
             <Form>
               <div className="row">
                 <Fieldset
@@ -95,6 +95,8 @@ const ClassForm = ({ siteName, availableHours }: Props) => (
                   placeholder="Select grade"
                   errors={errors}
                   touched={touched}
+                  onChange={setFieldValue}
+                  onBlur={setFieldTouched}
                   options={[
                     { label: 'K', value: 'k' },
                     { label: '1', value: '1' },

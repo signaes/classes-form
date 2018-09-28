@@ -13,6 +13,8 @@ type Props = {
   placeholder?: string,
   errors: Object,
   touched: Object,
+  onChange: Function,
+  onBlur: Function,
   options: Array<Object>,
 };
 
@@ -39,7 +41,9 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
 
   toggle = () => this.setState((previousState: Object) => ({
     isOpened: !previousState.isOpened,
-  }));
+  }), this.handleBlur);
+
+  handleBlur = () => this.props.onBlur(this.props.name, !this.state.isOpened);
 
   handleChange = (e: Object) => {
     const { target } = e;
@@ -67,6 +71,7 @@ class CheckboxesSelect extends React.PureComponent<Props, State> {
     const choicesString = choicesArray.map(c => c.label).join('-');
 
     this.setState({ choicesDic, choicesArray, choicesString });
+    this.props.onChange(this.props.name, choicesArray);
   }
 
   render() {
@@ -129,6 +134,8 @@ CheckboxesSelect.propTypes = {
   label: PropTypes.string.isRequired,
   className: PropTypes.string,
   placeholder: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   touched: PropTypes.object.isRequired,
   options: PropTypes.arrayOf(PropTypes.shape({
