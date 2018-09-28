@@ -19,6 +19,8 @@ const StyledClassForm = styled.div`
       min-width: calc(33% - 2.6rem);
 
       ${media.phone`
+        flex-basis: calc(33.3% - 2.6rem);
+
         & + fieldset {
           margin-left: 1.3rem;
         }
