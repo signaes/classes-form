@@ -12,8 +12,8 @@ const MONTH = new Date().getMonth();
 const weekInitials = WEEKDAYS.map(w => w[0]);
 
 type Props = {
-  year: number,
-  month: number,
+  year?: number,
+  month?: number,
 };
 
 const Calendar = ({ year = YEAR, month = MONTH }: Props) => (
