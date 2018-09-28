@@ -91,7 +91,7 @@ const StyledCheckboxesSelect = styled.fieldset`
       padding: 0;
       position: absolute;
       opacity: 0;
-      pointer-events: all;
+      pointer-events: none;
 
       &[data-opened="false"],
       &[data-opened="true"] {
