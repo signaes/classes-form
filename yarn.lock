@@ -3097,7 +3097,7 @@ eslint-plugin-flowtype@^2.50.1:
   dependencies:
     lodash "^4.17.10"
 
-eslint-plugin-jest@^21.22.0:
+eslint-plugin-jest@^21.18.0, eslint-plugin-jest@^21.22.0:
   version "21.22.1"
   resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-21.22.1.tgz#bc805e9b1c75c3bc92e47c44dd41370c1af7ebcc"
 
@@ -3845,6 +3845,12 @@ fusion-plugin-react-helmet-async@^1.0.0:
   dependencies:
     react-helmet-async "^0.1.0"
 
+fusion-plugin-react-redux@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-react-redux/-/fusion-plugin-react-redux-1.0.9.tgz#fdfc96f91367b8b127a16c2931c1fbb70c14d007"
+  dependencies:
+    eslint-plugin-jest "^21.18.0"
+
 fusion-plugin-react-router@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/fusion-plugin-react-router/-/fusion-plugin-react-router-1.2.0.tgz#e8dae1672128365c7cc7959e8ad99641de2b917e"
@@ -3852,6 +3858,12 @@ fusion-plugin-react-router@^1.2.0:
     history "^4.7.2"
     prop-types "^15.6.2"
     react-router-dom "^4.3.1"
+
+fusion-plugin-redux-action-emitter-enhancer@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/fusion-plugin-redux-action-emitter-enhancer/-/fusion-plugin-redux-action-emitter-enhancer-2.0.0.tgz#0ac105cf7757dc3daa4101455c3a03f9096d952e"
+  dependencies:
+    eslint-plugin-jest "^21.18.0"
 
 fusion-plugin-styletron-react@^2.5.2:
   version "2.5.2"
