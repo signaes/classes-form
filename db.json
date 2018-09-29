@@ -1,0 +1,38 @@
+{
+  "sites": [
+    {
+      "id": "1",
+      "site_name": "Argonne Elementary",
+      "hourse_availableIds": ["1", "2"],
+      "seasonId": "1"
+    }
+  ],
+  "hourse_availables": [
+    {
+      "id": "1",
+      "begins": "03:15 PM",
+      "ends": "04:15 PM",
+      "days": ["Mon", "Tue", "Wed", "Thu"]
+    },
+    {
+      "id": "2",
+      "begins": "05:30 PM",
+      "ends": "06:30 PM",
+      "days": ["Mon", "Wed"]
+    }
+  ],
+  "seasons": [
+    {
+      "id": "1",
+      "start_date": "Wed Sep 12 2018 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "end_date": "Wed Dec 12 2018 00:00:00 GMT-0200 (Horário de Verão de Brasília)",
+      "enrollment_start_date": "Sun Sep 02 2018 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "enrollment_end_date": "Sat Sep 08 2018 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+      "no_class_dates": [
+        "Mon Oct 08 2018 00:00:00 GMT-0300 (Horário Padrão de Brasília)",
+        "Sat Nov 24 2018 00:00:00 GMT-0200 (Horário de Verão de Brasília)"
+      ],
+      "grades": ["K", "1", "2", "3"]
+    }
+  ]
+}
